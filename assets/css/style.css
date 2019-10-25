@@ -1,21 +1,57 @@
-.addAnimal {
-    width: 300px;;
-    float: left;
-    margin:5px;
-    padding:5px;
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 
+
+#buttons-div {
+    font-family: 'Josefin Sans', sans-serif;
+    width:70%;
+}
+
+.addMonster {
+    font-family: 'Josefin Sans', sans-serif;
+    width: 25%;
+    float: right;
+    margin:10px;
+    padding:10px;
+    border:10px;
 }
 
 .gifDiv {
-    width:60%;
+    width:70%;
     float:left;
+    border:10px;
+    margin:10px;
+    padding:10px;
 }
 
-#animal-gif {
-    width:300px;
+#monster-gif {
+    width:70%;
+    display : inline-block
 }
 
-.animalButton {
-    margin:5px;
-    padding:5px;
+.monsterButton {
+    margin:10px;
+    padding:10px;
+    border:10px;
+
+}
+
+#images {
+    font-family: 'Josefin Sans', sans-serif;
+    width: 70%;
+    overflow: hidden;
+    height:500px;
+    padding: 10px 20px 10px 20px;
+    overflow: auto;
+    text-align: center;
+    float: left;
+    opacity: 0.95;
+}
+
+body {
+    background-color: black;
+}
+
+#add-button {
+    margin:10px;
+    padding:10px;
 }

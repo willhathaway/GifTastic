@@ -1,15 +1,17 @@
 $(document).ready(function () {
 
-    let animalArray = ['Lion', 'Rhino', 'Bear', 'Wolf', 'Owl'];
+    let monsterArray = ['Dragon', 'Vampire', 'Cyclops', 'Werewolf', 'Goblin'];
     let buttonsDiv = $('#buttons-div');
 
-    for (i = 0; i < animalArray.length; i++) {
-        let animalButton = $('<button class = "btn btn-primary animalButton" id=' + animalArray[i] + '>');
-        animalButton.html(animalArray[i]);
-        animalButton.appendTo(buttonsDiv);
+    for (i = 0; i < monsterArray.length; i++) {
+        let monsterButton = $('<button class = "btn btn-dark monsterButton" id=' + monsterArray[i] + '>');
+        monsterButton.html(monsterArray[i]);
+        monsterButton.appendTo(buttonsDiv);
     }
 
-    $("#buttons-div").on("click", ".animalButton", function () {
+    $("#buttons-div").on("click", ".monsterButton", function () {
+
+        $('#images').empty();
 
         console.log('click');
 
@@ -34,18 +36,35 @@ $(document).ready(function () {
 
                 for (i = 0; i < response.data.length; i++) {
 
-                    imageUrl = response.data[i].bitly_gif_url;
+
+                    rating = response.data[i].rating;
+
+                    imageUrl = response.data[i].images.fixed_height.url;
 
 
-                    // a html element is created to hold the cat image
-                    let animalGif = $("<img id='animal-gif'>");
+                    // a html element is created to hold the gif
 
-                    // the cat image element is given then attrible linking to the cat image and is given the alt atribute 'cat image'
-                    animalGif.attr("src", imageUrl);
-                    animalGif.attr("alt", "animal image");
+                    let newDiv = $("<div>");
 
-                    // the cat image element is prepended to the div of id 'images'
-                    $("#images").prepend(animalGif);
+                    let ratingText = $("<p id='rating'>")
+                  
+                    let monsterGif = $("<img id='monster-gif'>");
+                    
+
+                    // the cat image element is given then attrible linking to the cat image and is given the alt atribute 'monster image'
+                    monsterGif.attr("src", imageUrl);
+                    monsterGif.attr("alt", "monster image");
+
+                    // the element is prepended to the div of id 'images'
+
+                    $(ratingText).text('rating: ' + rating);
+
+                    $(ratingText).appendTo(newDiv);
+                    
+                    $(monsterGif).appendTo(newDiv);
+
+                    $(newDiv).appendTo('#images');
+                    
                 }
             });
     });
@@ -53,13 +72,11 @@ $(document).ready(function () {
 
     $('#add-button').on('click', function () {
 
-        let input = $('#new-animal-input').val();
+        let input = $('#new-monster-input').val();
 
-        animalArray.push(input);
+        monsterArray.push(input);
 
-
-
-        let newButton = $('<button class = "btn btn-primary animalButton" id=' + input + '>');
+        let newButton = $('<button class = "btn btn-primary monsterButton" id=' + input + '>');
         newButton.html(input);
         newButton.appendTo(buttonsDiv);
 
