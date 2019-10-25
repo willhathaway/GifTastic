@@ -1,0 +1,21 @@
+.addAnimal {
+    width: 300px;;
+    float: left;
+    margin:5px;
+    padding:5px;
+
+}
+
+.gifDiv {
+    width:60%;
+    float:left;
+}
+
+#animal-gif {
+    width:300px;
+}
+
+.animalButton {
+    margin:5px;
+    padding:5px;
+}
