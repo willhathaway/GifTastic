@@ -58,7 +58,6 @@ $(document).ready(function () {
 
                     let imageUrl = response.data[i].images.fixed_height.url;
 
-
                     // An HTML div is created to hold the gif and the rating:
 
                     let newDiv = $("<div>");
@@ -87,6 +86,12 @@ $(document).ready(function () {
                     
                 }
             });
+    });
+
+    $('#monster-gif').on('click', function () {
+
+        console.log('click');
+
     });
 
 
