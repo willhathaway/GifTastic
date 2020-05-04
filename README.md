@@ -4,7 +4,7 @@ This project is based around an AJAX request to the Giphy API. The challenge was
 
 Click any monster to display gifs, or add a monster to the list:
 
-![gif-app-image](Screen Shot 2020-05-04 at 9.26.07 AM.png)
+![gif-app-image](https://github.com/willhathaway/GifTastic/blob/master/Screen%20Shot%202020-05-04%20at%209.26.07%20AM.png)
 
 Deployed link: https://willhathaway.github.io/GifTastic/
 
