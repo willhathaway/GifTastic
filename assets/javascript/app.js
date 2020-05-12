@@ -63,36 +63,55 @@ $(document).ready(function () {
                     let newDiv = $("<div>");
 
                     let ratingText = $("<p id='rating'>")
-                  
+
                     let monsterGif = $("<img id='monster-gif'>");
-                    
+
                     // Note: the following comment and 2 lines of code were taken/modified from the cat-button activity from October 19
                     // The image element is given then attribute linking to the monster image, and is given the alt atribute 'monster image':
 
                     monsterGif.attr("src", imageUrl);
                     monsterGif.attr("alt", "monster image");
 
+
+                    monsterGif.attr("data-still", response.data[i].images.original_still.url);
+                    monsterGif.attr("data-animate", response.data[i].images.original.url);
+                    monsterGif.attr("data-state", "still");
+
+
                     // The rating and the gif are both appended to the newDiv element
+
 
                     $(ratingText).text('rating: ' + rating);
 
                     $(ratingText).appendTo(newDiv);
-                    
+
                     $(monsterGif).appendTo(newDiv);
 
                     // The newDiv, complete with rating and gif, is now added to the #images div:
 
                     $(newDiv).appendTo('#images');
-                    
+
                 }
             });
     });
 
-    $('#monster-gif').on('click', function () {
 
-        console.log('click');
+    $(document).on("click", ".monsterGif",function(){
 
-    });
+        let state = $(this).attr("data-state");
+        let animateGiphy = $(this).attr("data-animate");
+        let stillGiphy = $(this).attr("data-still");
+    
+            if (state === "pause") {
+          $(this).attr("src", animateGiphy);
+          $(this).attr("data-state", "play");
+        }
+    
+        else if (state === "play") {
+          $(this).attr("src", stillGiphy);
+          $(this).attr("data-state", "pause");
+        }
+      });
 
 
     // On-click function for adding a new button to the list:
