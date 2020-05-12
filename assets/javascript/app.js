@@ -95,6 +95,7 @@ $(document).ready(function () {
             });
     });
 
+    // play/pause gifs on click function:
 
     $(document).on("click", ".monsterGif",function(){
 
