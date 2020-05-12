@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 
+/* div containing buttons */
 
 #buttons-div {
     font-family: 'Josefin Sans', sans-serif;
     width:70%;
 }
+
+/* div containing add monster input and button */
 
 .addMonster {
     font-family: 'Josefin Sans', sans-serif;
@@ -14,6 +17,8 @@
     padding:10px;
     border:10px;
 }
+
+/* div containing the gif results from giphy */
 
 .gifDiv {
     width:70%;
