@@ -28,10 +28,14 @@
     padding:10px;
 }
 
+/* div containing specific monster gif */
+
 #monster-gif {
     width:70%;
     display : inline-block
 }
+
+/* button for giphy API call */
 
 .monsterButton {
     margin:10px;
@@ -39,6 +43,8 @@
     border:10px;
 
 }
+
+/* styles for all api call results */
 
 #images {
     font-family: 'Josefin Sans', sans-serif;
@@ -52,9 +58,13 @@
     opacity: 0.95;
 }
 
+/* styles for whole page */
+
 body {
     background-color: black;
 }
+
+/* styles for the button to 'add monster' */
 
 #add-button {
     margin:10px;
